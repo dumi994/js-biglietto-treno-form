@@ -1,8 +1,6 @@
 
-
-
 // Event listenere click del bottone generate
-document.getElementById("generate_ticket_button").addEventListener('click', function(
+/* document.getElementById("generate_ticket_button").addEventListener('click', function(
 
     
     var userInputEl = document.getElementById('name');
@@ -56,16 +54,16 @@ document.getElementById("generate_ticket_button").addEventListener('click', func
             </div>
         </div>`
     );
-});
+ */
 
 // Event listenere click del b ottone cancel
 
-document.getElementById('cancel_ticket_button').addEventListener('click', fucntion (){
+/* document.getElementById('cancel_ticket_button').addEventListener('click', fucntion (){
         userInputEl = document.getElementById('name').value = '';
         kmInputEl = document.getElementById('km').value = '';
         ageGroupSelectEl = document.getElementById('age').value = '';
     
-})
+}) */
 
 /**
  * 
@@ -73,9 +71,36 @@ document.getElementById('cancel_ticket_button').addEventListener('click', fucnti
  * @param {number} max numero massimo del range
  * @returns {number} numero casuale
  */
-
+/* 
 function randomNumber (min, max){
     Math.floor(Math.random() * (max - min +1))+ min;
+} */
+
+// chiiedere Nome passeggero
+
+
+
+function myTicket(){
+    var userInputEl = document.getElementById('name').value;  
+    console.log(userInputEl);
+    document.getElementById('nome_passeggero').innerHTML = userInputEl;    
 }
+document.getElementById('generate_ticket_button').addEventListener('click', myTicket)
+
+// generare un Codice treno (numero casuale tra 90000 e 100000 escluso)
+function randomNumber (min, max){
+   var numberr = Math.floor(Math.random() * (max - min +1))+ min;
+   console.log(numberr); 
+   document.getElementById('carrozza').innerHTML = numberr;
+}
+randomNumber (90000, 100000);
+document.getElementById('generate_ticket_button').addEventListener('click', randomNumber)
+
+
+// assegnare Numero carrozza
+// Prezzo calcolato
+// Categoria selezionata dall'utente
+
+
 
 
