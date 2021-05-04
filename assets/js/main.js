@@ -65,12 +65,7 @@
     
 }) */
 
-/**
- * 
- * @param {number} min numero minimo del range
- * @param {number} max numero massimo del range
- * @returns {number} numero casuale
- */
+
 /* 
 function randomNumber (min, max){
     Math.floor(Math.random() * (max - min +1))+ min;
@@ -88,14 +83,30 @@ function myTicket(){
 document.getElementById('generate_ticket_button').addEventListener('click', myTicket)
 
 // generare un Codice treno (numero casuale tra 90000 e 100000 escluso)
+/**
+ * 
+ * @param {number} min numero minimo del range
+ * @param {number} max numero massimo del range
+ * @returns {number} numero casuale
+ */
+
+
+
 function randomNumber (min, max){
    var numberr = Math.floor(Math.random() * (max - min +1))+ min;
    console.log(numberr); 
-   document.getElementById('carrozza').innerHTML = numberr;
+   document.getElementById('codiceCp').innerHTML = numberr;
 }
 randomNumber (90000, 100000);
-document.getElementById('generate_ticket_button').addEventListener('click', randomNumber)
+document.getElementById('generate_ticket_button').addEventListener('click', randomNumber);
 
+
+randomNumber = (0, 18);
+document.getElementById('generate_ticket_button').addEventListener('click', randomNumber);
+console.log(randomNumber);
+document.getElementById('carrozza').innerHTML = randomNumber;
+
+//document.getElementById('generate_ticket_button').addEventListener('click', carrozzaRandom);
 
 // assegnare Numero carrozza
 // Prezzo calcolato
