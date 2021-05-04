@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS    -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Acquista qui il tuo biglietto</title>
+    <!-- BOOTSTRAP -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>CALCOLA IL TUO BIGLIETTO DEL TRENO</h1>
+    </header>
+    <!-- Header -->
+
+    <!-- SEZIONE FORM -->
+   <div class="col-12 container">
+       <form action="">
+       <div class="col-4 text-center">
+            <h2><label for="Nome e cognome">Nome e Cognome</label></h2>
+            <input type="text" class="form-control form_mio" id="nomeCognome" placeholder="Nome e Cognome">
+       </div>
+       <div class="col-4 text-center">
+            <h2><label for="distanza da percorrere">KM da percorrere</label></h2>
+            <input type="text" class="form-control form_mio" placeholder="Quanti km vuoi percorrere">
+       </div>
+       <div class="col-4 text-center">
+           <h2><label for="fascia d'eta">Scegli la fascia d'età</label></h2>
+           <select name="fascia d'età" class="form_mio" id="età">
+            <option value="minorenne">Minorenne (0-18)</option>
+            <option value="18-65">Età compresa tra 18 e 65</option>
+            <option value="over 65">Sopra i 65 anni</option>
+          </select>
+       </div>
+       <div class="col-12 centrato">
+            <form class="" action="">
+                <button type="submit" class="btn btn-secondary">Genera</button>
+                <button type="reset" class="btn btn-secondary btn-lg">Annulla</button>
+            </form>
+       </div>
+       </form>
+   </div>
+    <!-- /SEZIONE FORM -->
+
+    <!-- MAIN -->
+    <!-- BIGLIETTO GENERATO -->
+
+    <!-- /BIGLIETTO GENERATO -->
+    <!-- /MAIN -->
+  
+    <!-- JS -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
