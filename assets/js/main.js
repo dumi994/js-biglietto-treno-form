@@ -1,44 +1,81 @@
-/* //chiedi all'utente il suo nome
-var nomeUtente = prompt('Inserisci il tuo Nome e Cognome')
-document.getElementById('nome').innerHTML = nomeUtente; */
 
 
-//Chiedi all'utente quanti km vuole percorrere
-/* var kmDaPerc = (prompt('Quanti km intendiamo percorrere?'));
-console.log(kmDaPerc);
-document.getElementById('posto').innerHTML = kmDaPerc; */
 
-//chiedi all'utente l'età
-/* var anni = (prompt('Quanti anni avete?'))
-console.log(anni);
-document.getElementById('eta').innerHTML = anni; */
+// Event listenere click del bottone generate
+document.getElementById("generate_ticket_button").addEventListener('click', function(
 
-var under = 18;
-var over = 65;
-//Sconto
-var scontoUnder = 0.17;
-var scontoOver = 0.13;
-//Prezzo al km
-var prezzoKm = 0.21;
-var valuta = '€';
+    
+    var userInputEl = document.getElementById('name');
+    var kmInputEl = document.getElementById('km');
+    var ageGroupSelectEl = document.getElementById('age')
+
+    var fullPrice = kmInputEl.value * 0.21
+    var discuountText = 'Prezzo pieno';
+
+    if(ageGroupSelectEl.value === 'minorenne'){
+        fullPrice -= fullPrice * 0.2;
+    var discuountText = 'Sconto Minorenne';
+
+    }else if (ageGroupSelectEl.value == 'over 65'){
+        fullPrice -= fullPrice * 0.4;
+        var discuountText = 'Sconto Minorenne';
+
+)};
+
+        
 
 
-if (isNaN(anni)){
-    alert('La tua età deve essere un numero');
+
+
+    var bigliettoEL = document.getElementById(ticket);
+    bigliettoEL
+    .innerAdjacentHTML('beforeend',
+        `<div class="ticket">
+            <div>
+                  <h3>Nome passeggero</h3>
+                  <span>Nome Passeggero ${userInputEl.value}</span>
+                  
+            </div>
+            <div>
+                    <h3>Offerta</h3>
+                    <span>Offerta ${discuountText}</span>
+                   
+            </div>
+            <div>
+                    <h3>Carrozza</h3>
+                    <span >  Carrozza ${randomNumber (1, 10)}</span>
+                  
+            </div>
+            <div>
+                    <h3>Codice cp</h3>
+                   <span> Codice CP ${randomNumber (90000, 100000)}</span>
+            </div>
+            <div>
+                    <h3> Costo del biglietto</h3>
+                    <span>${fullPrice.toFixed(2)}</span>
+            </div>
+        </div>`
+    );
+});
+
+// Event listenere click del b ottone cancel
+
+document.getElementById('cancel_ticket_button').addEventListener('click', fucntion (){
+        userInputEl = document.getElementById('name').value = '';
+        kmInputEl = document.getElementById('km').value = '';
+        ageGroupSelectEl = document.getElementById('age').value = '';
+    
+})
+
+/**
+ * 
+ * @param {number} min numero minimo del range
+ * @param {number} max numero massimo del range
+ * @returns {number} numero casuale
+ */
+
+function randomNumber (min, max){
+    Math.floor(Math.random() * (max - min +1))+ min;
 }
 
-if (anni <= under ){
-    console.log(kmDaPerc * scontoUnder);
-    document.getElementById('sconto').innerHTML ='Il prezzo da pagare è (sconto giovani -20%)';
-    document.getElementById('prezzo').innerHTML = kmDaPerc * scontoUnder.toFixed(2) + ' ' + valuta;
-}else if (anni > over){
-    console.log(kmDaPerc * scontoOver);
-    document.getElementById('sconto').innerHTML ='Il prezzo da pagare è (sconto anziani -40%)';
-    document.getElementById('prezzo').innerHTML = kmDaPerc * scontoOver + ' ' + valuta;
-}else{
-    console.log(kmDaPerc * prezzoKm);
-    document.getElementById('prezzo').innerHTML = kmDaPerc * prezzoKm.toFixed(2) + ' ' + valuta;
-}
 
-
-//||||||||||||||||||||||||||||||

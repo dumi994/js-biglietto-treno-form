@@ -23,16 +23,16 @@
    <div class="col-12 container">
         <div class="card">      
             <!-- nome e cognome -->
-            <div class="form_group">
+            <div class="form_group form_mio">
                 <p><label for="">Nome e Cognome</label></p>
                 <input type="text" name="name" id="name">
             </div>
                     <!-- fascia d'età -->
-            <div class="form_group">
+            <div class="form_group form_mio">
                 <p><label for="">Quanti km vuoi percorrere?</label></p>
                 <input type="text" name="km" id="km" step="0.1">
             </div>
-            <div class="form_group">
+            <div class="form_group form_mio">
                 <p><label for="rangeEtà">Range età</label></p>
                 <select name="age_group" class="form_mio" id="age">
                     <option value="minorenne">Minorenne (0-18)</option>
@@ -53,15 +53,37 @@
 
     <!-- MAIN -->
     <!-- BIGLIETTO GENERATO -->
-
+    <div class="container col-12">
+        <div class="card d-flex">
+            <div class="col-3 quadro_grigio">
+                <h3>Nome passeggero</h3>
+                <span id="nome_passeggero"></span>
+            </div>
+            <div class="col-9 quadro_bianco">
+                <div>
+                    <h3>Offerta</h3>
+                    <span id="offerta"></span>
+                </div>
+                <div>
+                    <h3>Carrozza</h3>
+                    <span id="carrozza"></span>
+                </div>
+                <div>
+                    <h3>Codice CP</h3>
+                    <span id="codiceCP"></span>
+                </div>
+                <div>
+                    <h3>Costo biglietto</h3>
+                    <span id="costo_totale"></span>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- /BIGLIETTO GENERATO -->
     <!-- /MAIN -->
-  
+   
     <!-- JS -->
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
 
-<div class="container">
-    
-</div>

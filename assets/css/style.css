@@ -3,6 +3,9 @@
   display: 0;
   margin: 0;
 }
+label {
+  text-align: center;
+}
 
 .centrato {
   text-align: center;
@@ -16,7 +19,7 @@ HEADER h1 {
 
 body {
   width: 100%;
-  background-color: #f40043;
+  background-color: #b91450;
 }
 .container {
   width: 80%;
@@ -45,4 +48,42 @@ body {
 .form_mio {
   border-radius: 10px;
   text-align: center;
+}
+
+.card {
+  position: relative;
+  text-align: center;
+  display: flex;
+  height: 150px;
+  width: 100%;
+}
+.form_group {
+  padding-top: 20px;
+  padding-right: 50px;
+}
+.bottoni {
+  align-items: center;
+}
+
+.quadro_grigio {
+  width: 200px;
+  height: 80%;
+  margin: auto;
+  background-color: gray;
+}
+.quadro_bianco {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100%;
+  width: 100%;
+  height: 80%;
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.quadro_bianco h3 {
+  margin: 20px;
 }
