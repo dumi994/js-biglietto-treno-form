@@ -87,23 +87,18 @@ document.getElementById('generate_ticket_button').addEventListener('click', myTi
  * 
  * @param {number} min numero minimo del range
  * @param {number} max numero massimo del range
- * @returns {number} numero casuale
+ * @returns {number} numero casuale CP e carrozza
  */
 
-function randomNumber (min, max){
-   var numberr = Math.floor(Math.random() * (max - min +1))+ min;
-   console.log(numberr); 
-   document.getElementById('codice_cp').innerHTML = numberr;
+function randomNumber (){
+    var CP = Math.floor(Math.random() * (100000 - 90000) + 90000);
+    var carrozze = Math.floor(Math.random() * (50 - 1))+ 1;
+    console.log(carrozze); 
+    document.getElementById('codice_cp').innerHTML = CP;
+    document.getElementById('carrozza').innerHTML = carrozze;
 }
-randomNumber (90000, 100000);
-document.getElementById('generate_ticket_button').addEventListener('click', randomNumber);
 
-
-document.getElementById('generate_ticket_button').addEventListener('click', function (randomNumber){
-    console.log(randomNumber);
-    document.getElementById('carrozza').innerHTML = randomNumber;
-    randomNumber = (0, 18);
-});
+document.getElementById('generate_ticket_button').addEventListener('click', randomNumber); 
 
 //document.getElementById('generate_ticket_button').addEventListener('click', carrozzaRandom);
 
