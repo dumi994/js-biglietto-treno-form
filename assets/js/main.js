@@ -100,11 +100,14 @@ function distanceKm(){
     console.log(eta);
     if (eta.value === maggiorenne ){
         document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.17;
-    }else if(eta === minorenne){
+        document.getElementById('offerta').innerHTML = 'Nessuno sconto';
+    }else if(eta.value === minorenne){
         document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.21;
+        document.getElementById('offerta').innerHTML = 'Sconto minorenne';
 
-    }else if (eta === anziano){
+    }else if (eta.value === anziano){
         document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.13;
+        document.getElementById('offerta').innerHTML = 'Sconto Anziani';
 
     }
 }
@@ -129,6 +132,7 @@ function randomNumber (){
 }
 
 document.getElementById('generate_ticket_button').addEventListener('click', randomNumber); 
+
 
 
 /* // assegnare Numero carrozza
