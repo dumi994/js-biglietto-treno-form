@@ -90,21 +90,20 @@ document.getElementById('generate_ticket_button').addEventListener('click', myTi
  * @returns {number} numero casuale
  */
 
-
-
 function randomNumber (min, max){
    var numberr = Math.floor(Math.random() * (max - min +1))+ min;
    console.log(numberr); 
-   document.getElementById('codiceCp').innerHTML = numberr;
+   document.getElementById('codice_cp').innerHTML = numberr;
 }
 randomNumber (90000, 100000);
 document.getElementById('generate_ticket_button').addEventListener('click', randomNumber);
 
 
-randomNumber = (0, 18);
-document.getElementById('generate_ticket_button').addEventListener('click', randomNumber);
-console.log(randomNumber);
-document.getElementById('carrozza').innerHTML = randomNumber;
+document.getElementById('generate_ticket_button').addEventListener('click', function (randomNumber){
+    console.log(randomNumber);
+    document.getElementById('carrozza').innerHTML = randomNumber;
+    randomNumber = (0, 18);
+});
 
 //document.getElementById('generate_ticket_button').addEventListener('click', carrozzaRandom);
 
