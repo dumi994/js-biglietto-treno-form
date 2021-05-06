@@ -1,75 +1,4 @@
 
-// Event listenere click del bottone generate
-/* document.getElementById("generate_ticket_button").addEventListener('click', function(
-
-    
-    var userInputEl = document.getElementById('name');
-    var kmInputEl = document.getElementById('km');
-    var ageGroupSelectEl = document.getElementById('age')
-
-    var fullPrice = kmInputEl.value * 0.21
-    var discuountText = 'Prezzo pieno';
-
-    if(ageGroupSelectEl.value === 'minorenne'){
-        fullPrice -= fullPrice * 0.2;
-    var discuountText = 'Sconto Minorenne';
-
-    }else if (ageGroupSelectEl.value == 'over 65'){
-        fullPrice -= fullPrice * 0.4;
-        var discuountText = 'Sconto Minorenne';
-
-)};
-
-        
-
-
-
-
-    var bigliettoEL = document.getElementById(ticket);
-    bigliettoEL
-    .innerAdjacentHTML('beforeend',
-        `<div class="ticket">
-            <div>
-                  <h3>Nome passeggero</h3>
-                  <span>Nome Passeggero ${userInputEl.value}</span>
-                  
-            </div>
-            <div>
-                    <h3>Offerta</h3>
-                    <span>Offerta ${discuountText}</span>
-                   
-            </div>
-            <div>
-                    <h3>Carrozza</h3>
-                    <span >  Carrozza ${randomNumber (1, 10)}</span>
-                  
-            </div>
-            <div>
-                    <h3>Codice cp</h3>
-                   <span> Codice CP ${randomNumber (90000, 100000)}</span>
-            </div>
-            <div>
-                    <h3> Costo del biglietto</h3>
-                    <span>${fullPrice.toFixed(2)}</span>
-            </div>
-        </div>`
-    );
- */
-
-// Event listenere click del b ottone cancel
-
-/* document.getElementById('cancel_ticket_button').addEventListener('click', fucntion (){
-        userInputEl = document.getElementById('name').value = '';
-        kmInputEl = document.getElementById('km').value = '';
-        ageGroupSelectEl = document.getElementById('age').value = '';
-    
-}) */
-
-
-/* 
-function randomNumber (min, max){
-    Math.floor(Math.random() * (max - min +1))+ min;
-} */
 
 // chiiedere Nome passeggero
 var maggiorenne;
@@ -91,25 +20,27 @@ function myTicket(){
 }
 document.getElementById('generate_ticket_button').addEventListener('click', myTicket) // mette in atto la funzione al click del bottone genera
 
-
 function distanceKm(){
+   /*  var scontoMinorenne = userDistanceEl * 0.17; */
     var userDistanceEl = document.getElementById('km').value;
     console.log(userDistanceEl);
     document.getElementById('costo_totale').innerHTML = userDistanceEl;
     var eta = document.getElementById('age').value;
     console.log(eta);
-    if (eta.value === maggiorenne ){
-        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.17;
-        document.getElementById('offerta').innerHTML = 'Nessuno sconto';
-    }else if(eta.value === minorenne){
-        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.21;
+
+    console.log(minorenne, maggiorenne, anziano);
+
+    if(eta === "minorenne"){
         document.getElementById('offerta').innerHTML = 'Sconto minorenne';
-
-    }else if (eta.value === anziano){
-        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.13;
+        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.17;
+    }else if (eta === "anziano"){
         document.getElementById('offerta').innerHTML = 'Sconto Anziani';
-
+        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.13;
+    } else {
+        document.getElementById('offerta').innerHTML = 'Nessuno sconto';
+        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.21;
     }
+   
 }
 document.getElementById('generate_ticket_button').addEventListener('click', distanceKm)
 
