@@ -20,6 +20,8 @@ function myTicket(){
 }
 document.getElementById('generate_ticket_button').addEventListener('click', myTicket) // mette in atto la funzione al click del bottone genera
 
+
+// Categoria selezionata dall'utente (range eta 
 function distanceKm(){
    /*  var scontoMinorenne = userDistanceEl * 0.17; */
     var userDistanceEl = document.getElementById('km').value;
@@ -29,6 +31,7 @@ function distanceKm(){
     console.log(eta);
 
     console.log(minorenne, maggiorenne, anziano);
+    // Prezzo calcolato
 
     if(eta === "minorenne"){
         document.getElementById('offerta').innerHTML = 'Sconto minorenne';
@@ -64,8 +67,16 @@ function randomNumber (){
 
 document.getElementById('generate_ticket_button').addEventListener('click', randomNumber); 
 
+document.getElementById('cancel_ticket_button').addEventListener('click', function () {  
+    document.getElementById('name').value = "";
+    document.getElementById('km').value = "";
+    document.getElementById('age').value = "";
 
+    /* document.getElementById('nome_passeggero').value = "";
+    document.getElementById('offerta').value = "";
+    document.getElementById('carrozza').value = "";
+    document.getElementById('codice_cp').value = "";
+    document.getElementById('costo_totale').value = ""; */
+    
 
-/* // assegnare Numero carrozza
-// Prezzo calcolato
-// Categoria selezionata dall'utente */
+})
