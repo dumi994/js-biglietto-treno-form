@@ -15,7 +15,7 @@ var scontoAnziano = 0.13;
 // questa funzione chiede il nome e lo stampa
 function myTicket(){
     var userInputEl = document.getElementById('name').value;  //salva il nome in una var
-    console.log(userInputEl);       //log della var con il nome
+    //console.log(userInputEl);       //log della var con il nome
     document.getElementById('nome_passeggero').innerHTML = userInputEl;   //mette il valore della var nel id nome passeggero 
 }
 document.getElementById('generate_ticket_button').addEventListener('click', myTicket) // mette in atto la funzione al click del bottone genera
@@ -28,20 +28,20 @@ function distanceKm(){
     console.log(userDistanceEl);
     document.getElementById('costo_totale').innerHTML = userDistanceEl;
     var eta = document.getElementById('age').value;
-    console.log(eta);
+    //console.log(eta);
 
     console.log(minorenne, maggiorenne, anziano);
     // Prezzo calcolato
 
     if(eta === "minorenne"){
         document.getElementById('offerta').innerHTML = 'Sconto minorenne';
-        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.17;
+        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.17 + '&euro;';
     }else if (eta === "anziano"){
         document.getElementById('offerta').innerHTML = 'Sconto Anziani';
-        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.13;
+        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.13 + '&euro;';
     } else {
         document.getElementById('offerta').innerHTML = 'Nessuno sconto';
-        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.21;
+        document.getElementById('costo_totale').innerHTML = userDistanceEl * 0.21 + '&euro;';
     }
    
 }
